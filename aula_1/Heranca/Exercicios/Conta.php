@@ -7,7 +7,7 @@ class Conta{
 	private $numConta;
 	private $tipo;
 	
-	public function __construct($nome = null, int $numeroConta){
+	public function __construct($nome = null,  $numeroConta){
 		$this->titular = $nome;
 		$this->numConta = $numeroConta;
 	}
@@ -88,7 +88,7 @@ class ContaCorrente extends Conta{
 		return $this->chequeEspecial;
 	}
 	
-	public function setChequeEspecial(boolean $chequeEspecial){
+	public function setChequeEspecial(bool $chequeEspecial){
 		$this->chequeEspecial = $chequeEspecial;
 	}
 	 
@@ -100,8 +100,8 @@ class ContaPoupanca extends Conta{
 	
 }
 
-$contaCP = new ContaPoupanca("Fernado", rand(1,9000));
-$contaCC = new ContaCorrente("Franciele",rand(1,9000));
+$contaCP = new ContaPoupanca("Fernado", rand(110,399) . "." . rand(110,999) . "." . rand(110,999) . "-" . rand(1,9) );
+$contaCC = new ContaCorrente("Franciele", rand(110,399) . "." . rand(110,999) . "." . rand(110,999) . "-" . rand(1,9) );
 
 $contaCP->SetTipo("CP");
 $contaCC->setTipo("CC");
